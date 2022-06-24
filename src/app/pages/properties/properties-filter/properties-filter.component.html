@@ -1,0 +1,29 @@
+<div class="filter">
+  <div class="label">Filter the results</div>
+  <mat-form-field appearance="fill">
+    <mat-label>Property status</mat-label>
+    <mat-select
+      (selectionChange)="doFilter()"
+      [(value)]="occupiedStatusFilter"
+    >
+      <mat-option [value]="'all'">All</mat-option>
+      <mat-option *ngFor="let status of occupiedStats" [value]="status">
+        {{status}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Tenant status</mat-label>
+    <mat-select
+      (selectionChange)="doFilter()"
+      [(value)]="tenantStatusFilter"
+    >
+      <mat-option [value]="'all'">All</mat-option>
+      <mat-option *ngFor="let status of tenantStatuses" [value]="status">
+        {{status}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>

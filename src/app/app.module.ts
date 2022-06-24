@@ -12,10 +12,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { DataFilterComponent } from './shared/data-filter/data-filter.component';
+import { PropertiesFilterComponent } from './pages/properties/properties-filter/properties-filter.component';
 
 @NgModule({
-  declarations: [AppComponent, DailogComponent, PropertiesComponent, DataFilterComponent],
+  declarations: [
+    AppComponent,
+    DailogComponent,
+    PropertiesComponent,
+    PropertiesFilterComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

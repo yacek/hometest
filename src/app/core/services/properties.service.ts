@@ -12,14 +12,10 @@ let fakeData: any = require('./properties.json');
 export class PropertiesService {
   constructor() {}
 
-  test(): any {
-    console.log('fakeData', fakeData);
-  }
-
   getProperties(): Observable<Property[]> {
     //fake http call
     return of(fakeData).pipe(
-      delay(5000),
+      delay(1500),
       map((res) =>
         res.properties.map((property: Property) =>
           new Property().deserialize(property)

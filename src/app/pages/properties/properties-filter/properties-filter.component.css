@@ -1,0 +1,13 @@
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  font-size: 1rem;
+  padding: 0.5em;
+  font-weight: 400;
+  color: rgba(0, 0, 0, .54);
+  height: 100%;
+}
