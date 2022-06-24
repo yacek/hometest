@@ -57,3 +57,9 @@
   font-weight: 500;
   color: #D52B1E;
 }
+
+.link {
+  color: #4E9CE8;
+  text-decoration: underline;
+  cursor: pointer;
+}

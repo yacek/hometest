@@ -8,15 +8,15 @@ enum Plan {
 }
 
 enum OwnerStatus {
-  active = 'Active',
-  inactive = 'Inactive',
+  Active = 'active',
+  Inactive = 'inactive',
 }
 
 enum OccupiedStats {
-  occupied = 'Occupied',
-  vacant = 'Vacant',
-  active = 'Active',
-  inactive = 'Inactive',
+  Occupied = 'occupied',
+  Vacant = 'vacant',
+  Active = 'active',
+  Inactive = 'inactive',
 }
 
 export class Property implements Deserializable {

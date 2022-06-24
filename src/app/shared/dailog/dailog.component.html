@@ -1,1 +1,8 @@
-<p>dailog works!</p>
+<h1 mat-dialog-title>{{data.type}}</h1>
+<div mat-dialog-content>
+  <p>{{data.info}}</p>
+  <p><b>Status:</b> {{data.status}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+</div>

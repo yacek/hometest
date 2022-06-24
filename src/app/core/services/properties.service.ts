@@ -19,7 +19,7 @@ export class PropertiesService {
   getProperties(): Observable<Property[]> {
     //fake http call
     return of(fakeData).pipe(
-      delay(1000),
+      delay(5000),
       map((res) =>
         res.properties.map((property: Property) =>
           new Property().deserialize(property)

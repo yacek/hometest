@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import { Tenant } from '../../core/models/tenant';
+import { MatDialog } from '@angular/material/dialog';
+import { DailogComponent } from '../../shared/dailog/dailog.component';
 
 @Component({
   selector: 'app-properties',
@@ -17,8 +19,8 @@ export class PropertiesComponent implements OnInit {
   public loadingData: boolean;
   public propertiesData: Property[];
   public dataSource: MatTableDataSource<Property>;
-  public occupiedStats = Object.keys(Property.OccupiedStats);
-  public tenantStatuses = Object.keys(Tenant.TenantStatus);
+  public occupiedStats = Object.values(Property.OccupiedStats);
+  public tenantStatuses = Object.values(Tenant.TenantStatus);
   private dataSubscription: Subscription;
   public displayedColumns: string[] = [
     'created',
@@ -33,7 +35,10 @@ export class PropertiesComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private propertiesService: PropertiesService) {}
+  constructor(
+    private propertiesService: PropertiesService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.loadingData = true;
@@ -48,7 +53,6 @@ export class PropertiesComponent implements OnInit {
         console.log(this.paginator);
         //console.log(Items);
       });
-    console.log(this.paginator);
   }
 
   ngOnDestroy() {
@@ -56,18 +60,29 @@ export class PropertiesComponent implements OnInit {
   }
 
   doFilter() {
-    console.log('filter ', this.occupiedStatusFilter, this.tenantStatusFilter);
-
     this.dataSource.data = this.propertiesData.filter((element) => {
-      //console.log('element', element);
       return (
         (this.tenantStatusFilter != null
           ? element.tenant.tenantStatus === this.tenantStatusFilter
           : true) &&
         (this.occupiedStatusFilter != null
-          ? element.occupiedStats === this.occupiedStatusFilter
+          ? this.occupiedStatusFilter === Property.OccupiedStats['Active']
+            ? element.occupiedStats === Property.OccupiedStats['Occupied'] ||
+              element.occupiedStats === Property.OccupiedStats['Vacant']
+            : element.occupiedStats === this.occupiedStatusFilter
           : true)
       );
+    });
+  }
+
+  openDialog(info: string, status: string, type: string): void {
+    const dialogRef = this.dialog.open(DailogComponent, {
+      width: '250px',
+      data: { info: info, status: status, type: type },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('The dialog was closed');
     });
   }
 }
