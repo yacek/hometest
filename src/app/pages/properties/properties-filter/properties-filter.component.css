@@ -11,3 +11,7 @@
   color: rgba(0, 0, 0, .54);
   height: 100%;
 }
+
+.selectOption {
+  text-transform: capitalize;
+}

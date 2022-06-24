@@ -1,8 +1,8 @@
 import { Deserializable } from './deserializable.model';
 
 enum TenantStatus {
-  'Active' = 'active',
-  'Inactive' = 'inactive',
+  'active' = 'active',
+  'inactive' = 'inactive',
 }
 
 export class Tenant implements Deserializable {

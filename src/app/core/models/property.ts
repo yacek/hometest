@@ -4,19 +4,19 @@ import * as dayjs from 'dayjs';
 
 enum Plan {
   'oneRate' = 'oneRate',
-  'On Demand' = 'On-Demand',
+  'On Demand' = 'On Demand',
 }
 
 enum OwnerStatus {
-  Active = 'active',
-  Inactive = 'inactive',
+  'active',
+  'inactive',
 }
 
 enum OccupiedStats {
-  Occupied = 'occupied',
-  Vacant = 'vacant',
-  Active = 'active',
-  Inactive = 'inactive',
+  'occupied' = 'occupied',
+  'vacant' = 'vacant',
+  'active' = 'active',
+  'inactive' = 'inactive',
 }
 
 export class Property implements Deserializable {
@@ -25,6 +25,9 @@ export class Property implements Deserializable {
 
   static readonly OccupiedStats = OccupiedStats;
   readonly OccupiedStats = Property.OccupiedStats;
+
+  static readonly OwnerStatus = OwnerStatus;
+  readonly OwnerStatus = Property.OwnerStatus;
 
   propertyId: string;
   createdOn: any;

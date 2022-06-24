@@ -7,7 +7,7 @@
       [(value)]="occupiedStatusFilter"
     >
       <mat-option [value]="'all'">All</mat-option>
-      <mat-option *ngFor="let status of occupiedStats" [value]="status">
+      <mat-option *ngFor="let status of occupiedStats" [value]="status" class="selectOption">
         {{status}}
       </mat-option>
     </mat-select>
@@ -20,7 +20,7 @@
       [(value)]="tenantStatusFilter"
     >
       <mat-option [value]="'all'">All</mat-option>
-      <mat-option *ngFor="let status of tenantStatuses" [value]="status">
+      <mat-option *ngFor="let status of tenantStatuses" [value]="status" class="selectOption">
         {{status}}
       </mat-option>
     </mat-select>

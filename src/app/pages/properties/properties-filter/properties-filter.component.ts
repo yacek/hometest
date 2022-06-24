@@ -14,14 +14,12 @@ export class PropertiesFilterComponent implements OnInit {
   private filteredData: any;
   public occupiedStatusFilter: string = 'all';
   public tenantStatusFilter: string = 'all';
-  public occupiedStats = Object.values(Property.OccupiedStats);
-  public tenantStatuses = Object.values(Tenant.TenantStatus);
+  public occupiedStats = Object.keys(Property.OccupiedStats);
+  public tenantStatuses = Object.keys(Tenant.TenantStatus);
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log();
-  }
+  ngOnInit(): void {}
 
   doFilter() {
     this.filteredData = this.propertiesData.filter((element: any) => {
@@ -30,9 +28,9 @@ export class PropertiesFilterComponent implements OnInit {
           ? element.tenant.tenantStatus === this.tenantStatusFilter
           : true) &&
         (this.occupiedStatusFilter !== 'all'
-          ? this.occupiedStatusFilter === Property.OccupiedStats['Active']
-            ? element.occupiedStats === Property.OccupiedStats['Occupied'] ||
-              element.occupiedStats === Property.OccupiedStats['Vacant']
+          ? this.occupiedStatusFilter === Property.OccupiedStats['active']
+            ? element.occupiedStats === Property.OccupiedStats['occupied'] ||
+              element.occupiedStats === Property.OccupiedStats['vacant']
             : element.occupiedStats === this.occupiedStatusFilter
           : true)
       );
