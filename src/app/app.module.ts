@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DailogComponent } from './shared/dailog/dailog.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
 import { PropertiesComponent } from './pages/properties/properties.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -17,7 +17,7 @@ import { PropertiesFilterComponent } from './pages/properties/properties-filter/
 @NgModule({
   declarations: [
     AppComponent,
-    DailogComponent,
+    DialogComponent,
     PropertiesComponent,
     PropertiesFilterComponent,
   ],

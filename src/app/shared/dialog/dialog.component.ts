@@ -8,13 +8,13 @@ export interface DialogData {
 }
 
 @Component({
-  selector: 'app-dailog',
-  templateUrl: './dailog.component.html',
-  styleUrls: ['./dailog.component.css'],
+  selector: 'app-dialog',
+  templateUrl: './dialog.component.html',
+  styleUrls: ['./dialog.component.css'],
 })
-export class DailogComponent implements OnInit {
+export class DialogComponent implements OnInit {
   constructor(
-    public dialogRef: MatDialogRef<DailogComponent>,
+    public dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {}
 

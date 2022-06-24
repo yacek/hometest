@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { DailogComponent } from '../../shared/dailog/dailog.component';
+import { DialogComponent } from '../../shared/dialog/dialog.component';
 
 @Component({
   selector: 'app-properties',
@@ -57,7 +57,7 @@ export class PropertiesComponent implements OnInit {
   }
 
   openDialog(info: string, status: string, type: string): void {
-    this.dialog.open(DailogComponent, {
+    this.dialog.open(DialogComponent, {
       width: '250px',
       data: { info: info, status: status, type: type },
     });
