@@ -20,8 +20,11 @@ enum OccupiedStats {
 }
 
 export class Property implements Deserializable {
-  // static readonly PropertyPlan = Plan;
-  // readonly PropertyPlan = Property.PropertyPlan;
+  static readonly PropertyPlan = Plan;
+  readonly PropertyPlan = Property.PropertyPlan;
+
+  static readonly OccupiedStats = OccupiedStats;
+  readonly OccupiedStats = Property.OccupiedStats;
 
   propertyId: string;
   createdOn: any;

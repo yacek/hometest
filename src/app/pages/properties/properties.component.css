@@ -30,15 +30,15 @@
 }
 
 .green {
-  color: #08BE22
+  color: #08BE22;
 }
 
 .red {
-  color: #D52B1E
+  color: #D52B1E;
 }
 
 .gray {
-  color: #353435
+  color: #353435;
 }
 
 .spinner {
@@ -50,4 +50,10 @@
 
 .filters {
 
+}
+
+.noDataRow {
+  text-align:center;
+  font-weight: 500;
+  color: #D52B1E;
 }

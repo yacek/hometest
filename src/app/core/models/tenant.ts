@@ -1,6 +1,14 @@
 import { Deserializable } from './deserializable.model';
 
+enum TenantStatus {
+  'active' = 'Active',
+  'inactive' = 'Inactive',
+}
+
 export class Tenant implements Deserializable {
+  static readonly TenantStatus = TenantStatus;
+  readonly TenantStatus = Tenant.TenantStatus;
+
   contactId: string;
   firstName: string;
   lastName: string;
@@ -17,9 +25,4 @@ export class Tenant implements Deserializable {
     Object.assign(this, input);
     return this;
   }
-}
-
-enum TenantStatus {
-  'active',
-  'inactive',
 }
